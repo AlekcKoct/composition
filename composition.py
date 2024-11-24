@@ -42,7 +42,7 @@ class Zoo:
 
     def show_animals(self):
         for animal in self.animals:
-            print(f"Животное: {animal.name}, Лет: {animal.age}")
+            print(f"Животное: {animal.name}, Возраст: {animal.age}")
 
 
 # Класс ZooKeeper
@@ -51,7 +51,11 @@ class ZooKeeper:
         self.name = name
 
     def feed_animal(self, animal):
-        return f"{self.name} кормит {animal.name}."
+        if lion != "":
+            animal.name = "Льва"
+            return f"{self.name} кормит {animal.name}."
+        else:
+            return f"{self.name} кормит {animal.name}."
 
 
 # Класс Veterinarian
@@ -60,15 +64,19 @@ class Veterinarian:
         self.name = name
 
     def heal_animal(self, animal):
-        return f"{self.name} лечит {animal.name}."
+        if snake != "":
+            animal.name = "Удава"
+            return f"{self.name} лечит {animal.name}."
+        else:
+            return f"{self.name} лечит {animal.name}."
 
 
 # Пример использования классов
 if __name__ == "__main__":
     # Создаем животных
-    parrot = Bird("Канарейка", 2)
-    lion = Mammal("Лев", 5)
-    snake = Reptile("Удав", 3)
+    parrot = Bird("Канарейка", "2 года")
+    lion = Mammal("Лев", "5 лет")
+    snake = Reptile("Удав", "3 года")
 
     # Создаем зоопарк и добавляем животных
     zoo = Zoo()
@@ -96,4 +104,5 @@ if __name__ == "__main__":
     print("\nДействия сотрудников в зоопарке:")
     print(zookeeper.feed_animal(lion))
     print(veterinarian.heal_animal(snake))
+
 
