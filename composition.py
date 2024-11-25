@@ -74,12 +74,25 @@ class Veterinarian:
             return f"{self.name} лечит {animal.name}."
 
 
+class Kinder:
+    def __init__(self, name):
+        self.name = name
+
+    def kind_animal(self, animal):
+        if parrot != "":
+            animal.name = "Канарейку"
+            return f"{self.name} смотрят {animal.name}."
+        else:
+            return f"{self.name} смотрят {animal.name}."
+
+
 # Пример использования классов
 if __name__ == "__main__":
     # Создаем животных
     parrot = Bird("Канарейка", "2 года")
     lion = Mammal("Лев", "5 лет")
     snake = Reptile("Удав", "3 года")
+
 
     # Создаем зоопарк и добавляем животных
     zoo = Zoo()
@@ -90,10 +103,12 @@ if __name__ == "__main__":
     # Создаем сотрудников зоопарка
     zookeeper = ZooKeeper("Охранник Вася")
     veterinarian = Veterinarian("Ветеринар")
+    kinder = Kinder("Дети")
 
     # Добавляем сотрудников в зоопарк
     zoo.add_employee(zookeeper)
     zoo.add_employee(veterinarian)
+
 
     # Показываем информацию о животных в зоопарке
     print("\nЖивотные и птицы в зоопарке:")
@@ -107,5 +122,5 @@ if __name__ == "__main__":
     print("\nДействия сотрудников в зоопарке:")
     print(zookeeper.feed_animal(lion))
     print(veterinarian.heal_animal(snake))
-
+    print(kinder.kind_animal(parrot))
 
