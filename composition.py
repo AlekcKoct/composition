@@ -8,19 +8,19 @@ class Animal:
 # Подкласс Bird
 class Bird(Animal):
     def make_sound(self):
-        return f"{self.name} издает звук: Чирик!"
+        return f"{self.name} издает звук: Поет!"
 
 
 # Подкласс Mammal
 class Mammal(Animal):
     def make_sound(self):
-        return f"{self.name} издает звук: Рык!"
+        return f"{self.name} издает звук: Рычит!"
 
 
 # Подкласс Reptile
 class Reptile(Animal):
     def make_sound(self):
-        return f"{self.name} издает звук: Шипение!"
+        return f"{self.name} издает звук: Шипит!"
 
 
 def animal_sound(animals):
@@ -42,7 +42,10 @@ class Zoo:
 
     def show_animals(self):
         for animal in self.animals:
-            print(f"Животное: {animal.name}, Возраст: {animal.age}")
+            if animal.name == "Канарейка":
+                print(f"Птпчка: {animal.name}, Возраст: {animal.age}")
+            else:
+                print(f"Животное: {animal.name}, Возраст: {animal.age}")
 
 
 # Класс ZooKeeper
@@ -92,13 +95,13 @@ if __name__ == "__main__":
     zoo.add_employee(zookeeper)
     zoo.add_employee(veterinarian)
 
-    # Демонстрируем звуки животных
-    print("Звуки животных и птиц:")
-    animal_sound(zoo.animals)
-
     # Показываем информацию о животных в зоопарке
     print("\nЖивотные и птицы в зоопарке:")
     zoo.show_animals()
+
+    # Демонстрируем звуки животных
+    print("\nЗвуки животных и птиц:")
+    animal_sound(zoo.animals)
 
     # Демонстрируем действия сотрудников
     print("\nДействия сотрудников в зоопарке:")
